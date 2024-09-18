@@ -1,0 +1,169 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+nav {
+  background-color: #00aaff;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si nécessaire */
+}
+
+nav a {
+  color: white;
+  margin: 0 10px; /* Réduit les marges pour les petits écrans */
+  text-decoration: none;
+  font-size: 18px;
+  display: inline-block;
+}
+
+/* Ajustements pour les petits écrans */
+@media (max-width: 768px) {
+  nav {
+    padding: 10px; /* Ajuste le padding pour les petits écrans */
+  }
+
+  nav a {
+    font-size: 16px; /* Réduit la taille de la police */
+    margin: 5px; /* Réduit les marges */
+  }
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+  text-align: center;
+  border-bottom: 2px solid #00aaff;
+}
+.header img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.section {
+  margin-bottom: 30px;
+}
+.section h2 {
+  border-bottom: 2px solid #00aaff;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+.section-coo {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #f4f4f4;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.section-coo ul {
+  list-style-type: none; /* Supprime les puces par défaut */
+  padding: 0;
+}
+.section-coo li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+.section-coo li i {
+  margin-right: 10px; /* Espace entre l'icône et le texte */
+  color: #1a73e8; /* Couleur des icônes */
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+footer a {
+  color: #00aaff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/*CONTACT//////////////////////////////////////////////////////////////////////////////*/
+.contact {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  height: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.contact h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact .contact-item {
+  margin: 10px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Ajout pour flexbox */
+  justify-content: center; /* Centre horizontalement */
+}
+
+.contact .contact-item a {
+  text-decoration: none;
+  display: flex;
+  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  width: 100%; /* S'assure que le lien prend toute la largeur disponible */
+  max-width: 300px; /* Limite la largeur max */
+}
+
+.contact .contact-item a span {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Animation pour hover */
+.contact .contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Styles spécifiques pour chaque plateforme */
+.contact-item.linkedin a {
+  background-color: #0077b5;
+}
+.contact-item.indeed a {
+  background-color: #4f4f4f;
+}
+.contact-item.telegram a {
+  background-color: #0088cc;
+}
+.contact-item.whatsapp a {
+  background-color: #25d366;
+}
+.contact-item.gmail a {
+  background-color: #d44638;
+}
+/* Ajout d'une légère animation */
+.contact .contact-item a:hover {
+  filter: brightness(1.1);
+}
