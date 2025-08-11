@@ -193,40 +193,86 @@ footer a:hover {
 /* ------------------------------
    Contact (boutons réseaux)
 ------------------------------ */
+/*CONTACT//////////////////////////////////////////////////////////////////////////////*/
 .contact {
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 10px;
+  width: 90%;
+  height: 90%;
   max-width: 800px;
   margin: 20px auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
+.contact h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Conteneur de chaque item */
 .contact .contact-item {
   margin: 10px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   justify-content: center;
 }
 
+/* Lien cliquable */
 .contact .contact-item a {
   text-decoration: none;
   display: flex;
   align-items: center;
-  padding: 12px 20px;
+  justify-content: center;
+  padding: 10px;
   border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Texte */
+.contact .contact-item a span {
+  margin-left: 10px;
+  font-size: 16px;
   font-weight: bold;
   color: white;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Animation au hover */
+.contact .contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .contact .contact-item a:hover {
-  transform: translateY(-4px);
   filter: brightness(1.1);
 }
 
-/* Couleurs spécifiques */
+/* Effet de vague lumineuse */
+.contact .contact-item a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+}
+
+.contact .contact-item a:hover::before {
+  left: 125%;
+}
+
+/* Styles spécifiques */
 .contact-item.linkedin a { background-color: #0077b5; }
 .contact-item.indeed a { background-color: #4f4f4f; }
 .contact-item.telegram a { background-color: #0088cc; }
