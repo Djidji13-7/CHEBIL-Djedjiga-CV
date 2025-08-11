@@ -230,20 +230,21 @@ footer a:hover {
   justify-content: center;
   padding: 10px;
   border-radius: 8px;
-  width: 100%;
-  max-width: 300px;
+  width: 260px; /* Taille fixe identique */
+  height: 50px; /* Hauteur fixe identique */
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Texte */
 .contact .contact-item a span {
   margin-left: 10px;
   font-size: 16px;
   font-weight: bold;
   color: white;
+  white-space: nowrap; /* Évite que le texte passe à la ligne */
 }
+
 
 /* Animation au hover */
 .contact .contact-item:hover {
@@ -278,4 +279,5 @@ footer a:hover {
 .contact-item.telegram a { background-color: #0088cc; }
 .contact-item.whatsapp a { background-color: #25d366; }
 .contact-item.gmail a { background-color: #d44638; }
+
 
