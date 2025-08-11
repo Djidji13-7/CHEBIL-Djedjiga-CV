@@ -1,169 +1,229 @@
+/* ------------------------------
+   Style général
+------------------------------ */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background: linear-gradient(135deg, #f0faff, #e8f4ff);
+  color: #333;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------
+   Navigation
+------------------------------ */
 nav {
-  background-color: #00aaff;
+  background: linear-gradient(90deg, #0099ff, #00d4ff);
   padding: 15px;
   text-align: center;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si nécessaire */
+  flex-wrap: wrap;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
   color: white;
-  margin: 0 10px; /* Réduit les marges pour les petits écrans */
+  margin: 0 12px;
   text-decoration: none;
   font-size: 18px;
-  display: inline-block;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* Ajustements pour les petits écrans */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover {
+  color: #ffdd57;
+}
+
+nav a:hover::after {
+  width: 60%;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   nav {
-    padding: 10px; /* Ajuste le padding pour les petits écrans */
+    padding: 10px;
   }
-
   nav a {
-    font-size: 16px; /* Réduit la taille de la police */
-    margin: 5px; /* Réduit les marges */
+    font-size: 16px;
+    margin: 6px;
   }
 }
 
+/* ------------------------------
+   Conteneur
+------------------------------ */
 .container {
   max-width: 900px;
-  margin: 20px auto;
-  background: #fff;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-in-out;
 }
+
+/* ------------------------------
+   En-tête
+------------------------------ */
 .header {
   text-align: center;
-  border-bottom: 2px solid #00aaff;
+  border-bottom: 3px solid #00aaff;
+  padding-bottom: 15px;
 }
-.header img {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 20px;
+
+.header h1 {
+  color: #0099ff;
+  font-size: 1.8em;
+  animation: fadeIn 1s ease-in-out;
 }
+
+.header h3 {
+  color: #555;
+}
+
+/* ------------------------------
+   Sections
+------------------------------ */
 .section {
   margin-bottom: 30px;
+  animation: fadeIn 1s ease-in-out;
 }
+
 .section h2 {
-  border-bottom: 2px solid #00aaff;
+  border-bottom: 3px solid #00aaff;
   padding-bottom: 10px;
   margin-bottom: 15px;
   font-size: 1.5em;
+  color: #0099ff;
 }
+
+.section ul {
+  padding-left: 20px;
+}
+
+.section li {
+  margin-bottom: 8px;
+  transition: transform 0.2s ease;
+}
+
+.section li:hover {
+  transform: translateX(5px);
+}
+
+/* ------------------------------
+   Coordonnées
+------------------------------ */
 .section-coo {
-  max-width: 900px;
-  margin: 20px auto;
-  background: #f4f4f4;
+  background: linear-gradient(135deg, #f0faff, #e6f7ff);
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+
 .section-coo ul {
-  list-style-type: none; /* Supprime les puces par défaut */
+  list-style: none;
   padding: 0;
 }
+
 .section-coo li {
   margin-bottom: 10px;
   font-size: 16px;
   display: flex;
   align-items: center;
-}
-.section-coo li i {
-  margin-right: 10px; /* Espace entre l'icône et le texte */
-  color: #1a73e8; /* Couleur des icônes */
+  color: #333;
 }
 
+.section-coo li i {
+  margin-right: 10px;
+  color: #0099ff;
+  font-size: 18px;
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
 footer {
-  background-color: #333;
+  background: #333;
   color: white;
   padding: 20px;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 40px;
 }
+
 footer a {
-  color: #00aaff;
+  color: #00d4ff;
   text-decoration: none;
   margin: 0 10px;
+  transition: color 0.3s ease;
 }
 
-/*CONTACT//////////////////////////////////////////////////////////////////////////////*/
+footer a:hover {
+  color: #ffdd57;
+}
+
+/* ------------------------------
+   Contact (boutons réseaux)
+------------------------------ */
 .contact {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  height: 90%;
+  border-radius: 12px;
   max-width: 800px;
   margin: 20px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
-}
-
-.contact h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
 }
 
 .contact .contact-item {
   margin: 10px 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex; /* Ajout pour flexbox */
-  justify-content: center; /* Centre horizontalement */
+  display: flex;
+  justify-content: center;
 }
 
 .contact .contact-item a {
   text-decoration: none;
   display: flex;
-  align-items: center; /* Centre verticalement */
-  justify-content: center; /* Centre horizontalement */
-  padding: 10px;
+  align-items: center;
+  padding: 12px 20px;
   border-radius: 8px;
-  transition: background-color 0.3s ease;
-  width: 100%; /* S'assure que le lien prend toute la largeur disponible */
-  max-width: 300px; /* Limite la largeur max */
-}
-
-.contact .contact-item a span {
-  margin-left: 10px;
-  font-size: 16px;
   font-weight: bold;
   color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Animation pour hover */
-.contact .contact-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Styles spécifiques pour chaque plateforme */
-.contact-item.linkedin a {
-  background-color: #0077b5;
-}
-.contact-item.indeed a {
-  background-color: #4f4f4f;
-}
-.contact-item.telegram a {
-  background-color: #0088cc;
-}
-.contact-item.whatsapp a {
-  background-color: #25d366;
-}
-.contact-item.gmail a {
-  background-color: #d44638;
-}
-/* Ajout d'une légère animation */
 .contact .contact-item a:hover {
+  transform: translateY(-4px);
   filter: brightness(1.1);
 }
+
+/* Couleurs spécifiques */
+.contact-item.linkedin a { background-color: #0077b5; }
+.contact-item.indeed a { background-color: #4f4f4f; }
+.contact-item.telegram a { background-color: #0088cc; }
+.contact-item.whatsapp a { background-color: #25d366; }
+.contact-item.gmail a { background-color: #d44638; }
