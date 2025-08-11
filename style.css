@@ -20,17 +20,23 @@ body {
    Navigation
 ------------------------------ */
 nav {
-  background: linear-gradient(90deg, #0099ff, #00d4ff);
+  background: linear-gradient(90deg, #00aaff, #00ffcc);
+  background-size: 200% 200%;
+  animation: gradientMove 6s ease infinite;
   padding: 15px;
   text-align: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 170, 255, 0.4);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 nav a {
   color: white;
@@ -39,37 +45,36 @@ nav a {
   font-size: 18px;
   font-weight: bold;
   position: relative;
-  transition: color 0.3s ease;
+  padding: 5px 8px;
+  transition: all 0.3s ease;
 }
 
 nav a::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: -4px;
-  left: 50%;
+  left: 0;
+  bottom: -3px;
   width: 0%;
-  height: 3px;
+  height: 2px;
   background: white;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-nav a:hover {
-  color: #ffdd57;
+  transition: width 0.3s ease;
 }
 
 nav a:hover::after {
-  width: 60%;
+  width: 100%;
+}
+
+nav a:hover {
+  color: #ffff99;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  nav {
-    padding: 10px;
-  }
   nav a {
     font-size: 16px;
-    margin: 6px;
+    margin: 5px;
   }
 }
 
@@ -227,3 +232,4 @@ footer a:hover {
 .contact-item.telegram a { background-color: #0088cc; }
 .contact-item.whatsapp a { background-color: #25d366; }
 .contact-item.gmail a { background-color: #d44638; }
+
