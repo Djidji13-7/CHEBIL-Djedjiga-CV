@@ -1,80 +1,79 @@
-/* ------------------------------
+/* ------------------------------ 
    Style général
 ------------------------------ */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #f0faff, #e8f4ff);
-  color: #333;
-  animation: fadeIn 0.8s ease-in-out;
+  color: #2f2a33;
+  background:
+    radial-gradient(circle at top left, rgba(255,182,193,0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(219,112,147,0.12), transparent 35%),
+    linear-gradient(135deg, #fff8fb, #f8f5ff, #fdf7fa);
+  background-attachment: fixed;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* Animation d'apparition */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ------------------------------
    Navigation
 ------------------------------ */
 nav {
-  background: linear-gradient(90deg, #00aaff, #00ffcc);
-  background-size: 200% 200%;
-  animation: gradientMove 6s ease infinite;
-  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(14px);
+
+  padding: 18px;
   text-align: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  box-shadow: 0 4px 15px rgba(0, 170, 255, 0.4);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-}
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+  gap: 10px;
 
+  border-bottom: 1px solid rgba(219,112,147,0.2);
+  box-shadow: 0 6px 25px rgba(199, 120, 150, 0.12);
+}
 
 nav a {
-  color: white;
-  margin: 0 12px;
+  color: #8a4f66;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+
+  padding: 8px 14px;
+  border-radius: 30px;
+
+  transition: all 0.35s ease;
   position: relative;
-  padding: 5px 8px;
-  transition: all 0.3s ease;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0%;
-  height: 2px;
-  background: white;
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
 }
 
 nav a:hover {
-  color: #ffff99;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(135deg, #f7c5d8, #e7d7ff);
+  color: #5f3147;
   transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(219,112,147,0.25);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   nav a {
-    font-size: 16px;
-    margin: 5px;
+    font-size: 14px;
+    margin: 3px;
   }
 }
 
@@ -82,12 +81,21 @@ nav a:hover {
    Conteneur
 ------------------------------ */
 .container {
-  max-width: 900px;
-  margin: 30px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  max-width: 950px;
+  margin: 40px auto;
+
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(12px);
+
+  padding: 35px;
+  border-radius: 28px;
+
+  border: 1px solid rgba(255,255,255,0.4);
+
+  box-shadow:
+    0 10px 35px rgba(181, 120, 150, 0.15),
+    0 2px 10px rgba(0,0,0,0.04);
+
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -96,34 +104,77 @@ nav a:hover {
 ------------------------------ */
 .header {
   text-align: center;
-  border-bottom: 3px solid #00aaff;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  width: 120px;
+  height: 4px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #d98cab, #b89cff);
+  display: block;
+  margin: 18px auto 0;
 }
 
 .header h1 {
-  color: #0099ff;
-  font-size: 1.8em;
-  animation: fadeIn 1s ease-in-out;
+  font-size: 1.9em;
+  color: #7a4860;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
 }
 
 .header h3 {
-  color: #555;
+  color: #5d5260;
+  font-size: 1.4em;
 }
 
 /* ------------------------------
    Sections
 ------------------------------ */
 .section {
-  margin-bottom: 30px;
-  animation: fadeIn 1s ease-in-out;
+  margin-bottom: 35px;
+  padding: 22px;
+
+  border-radius: 22px;
+
+  background: rgba(255,255,255,0.55);
+
+  border: 1px solid rgba(230, 200, 220, 0.35);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+.section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(204, 140, 170, 0.12);
+  background: rgba(255,255,255,0.72);
 }
 
 .section h2 {
-  border-bottom: 3px solid #00aaff;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-  font-size: 1.5em;
-  color: #0099ff;
+  font-size: 1.45em;
+  color: #b05d83;
+  margin-bottom: 18px;
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 100%;
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(90deg, #f4adc7, #d5b8ff);
 }
 
 .section ul {
@@ -131,22 +182,46 @@ nav a:hover {
 }
 
 .section li {
-  margin-bottom: 8px;
-  transition: transform 0.2s ease;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  transition: transform 0.25s ease;
 }
 
 .section li:hover {
-  transform: translateX(5px);
+  transform: translateX(6px);
+}
+
+/* ------------------------------
+   Liens
+------------------------------ */
+a {
+  color: #b05d83;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #8d4f6a;
+  text-shadow: 0 0 10px rgba(240, 170, 200, 0.4);
 }
 
 /* ------------------------------
    Coordonnées
 ------------------------------ */
 .section-coo {
-  background: linear-gradient(135deg, #f0faff, #e6f7ff);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,240,245,0.95),
+      rgba(247,240,255,0.95)
+    );
+
+  padding: 25px;
+  border-radius: 24px;
+
+  border: 1px solid rgba(219,112,147,0.15);
+
+  box-shadow: 0 8px 20px rgba(200, 140, 170, 0.12);
 }
 
 .section-coo ul {
@@ -155,16 +230,24 @@ nav a:hover {
 }
 
 .section-coo li {
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   font-size: 16px;
+
   display: flex;
   align-items: center;
-  color: #333;
+
+  color: #4d4450;
+
+  transition: transform 0.3s ease;
+}
+
+.section-coo li:hover {
+  transform: translateX(5px);
 }
 
 .section-coo li i {
-  margin-right: 10px;
-  color: #0099ff;
+  margin-right: 12px;
+  color: #c06a92;
   font-size: 18px;
 }
 
@@ -172,112 +255,145 @@ nav a:hover {
    Footer
 ------------------------------ */
 footer {
-  background: #333;
+  background:
+    linear-gradient(
+      135deg,
+      #6f4b61,
+      #4e445d
+    );
+
   color: white;
-  padding: 20px;
+
+  padding: 28px;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
+
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 footer a {
-  color: #00d4ff;
+  color: #ffd6ea;
   text-decoration: none;
   margin: 0 10px;
-  transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: #ffdd57;
+  color: white;
 }
 
 /* ------------------------------
-   Contact (boutons réseaux)
+   Contact
 ------------------------------ */
-/*CONTACT//////////////////////////////////////////////////////////////////////////////*/
 .contact {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
+  background: rgba(255,255,255,0.75);
+
+  backdrop-filter: blur(10px);
+
+  padding: 30px;
+  border-radius: 24px;
+
   width: 90%;
-  height: 90%;
-  max-width: 800px;
-  margin: 20px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  font-family: Arial, sans-serif;
+  max-width: 850px;
+
+  margin: 25px auto;
+
+  box-shadow:
+    0 8px 25px rgba(204, 140, 170, 0.12);
+
   text-align: center;
 }
 
 .contact h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 25px;
+  color: #8d4f6a;
 }
 
-/* Conteneur de chaque item */
 .contact .contact-item {
-  margin: 10px 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 14px 0;
+  transition: transform 0.35s ease;
   display: flex;
   justify-content: center;
 }
 
-/* Lien cliquable */
+.contact .contact-item:hover {
+  transform: scale(1.03);
+}
+
 .contact .contact-item a {
   text-decoration: none;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  border-radius: 8px;
-  width: 260px; /* Taille fixe identique */
-  height: 50px; /* Hauteur fixe identique */
+
+  padding: 12px;
+
+  border-radius: 18px;
+
+  width: 280px;
+  height: 55px;
+
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  color: white;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact .contact-item a:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Effet lumière premium */
+.contact .contact-item a::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background: rgba(255,255,255,0.25);
+
+  transform: skewX(-25deg);
+
+  transition: 0.7s;
+}
+
+.contact .contact-item a:hover::before {
+  left: 130%;
 }
 
 .contact .contact-item a span {
   margin-left: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  white-space: nowrap; /* Évite que le texte passe à la ligne */
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
-
-/* Animation au hover */
-.contact .contact-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+/* Couleurs élégantes */
+.contact-item.linkedin a {
+  background: linear-gradient(135deg, #8e6bbd, #c77ba0);
 }
 
-.contact .contact-item a:hover {
-  filter: brightness(1.1);
+.contact-item.indeed a {
+  background: linear-gradient(135deg, #5f5f7a, #7b6d91);
 }
 
-/* Effet de vague lumineuse */
-.contact .contact-item a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: skewX(-25deg);
-  transition: left 0.5s ease;
+.contact-item.telegram a {
+  background: linear-gradient(135deg, #6c9bcf, #8d7ad9);
 }
 
-.contact .contact-item a:hover::before {
-  left: 125%;
+.contact-item.whatsapp a {
+  background: linear-gradient(135deg, #5bbf95, #77d6b2);
 }
 
-/* Styles spécifiques */
-.contact-item.linkedin a { background-color: #0077b5; }
-.contact-item.indeed a { background-color: #4f4f4f; }
-.contact-item.telegram a { background-color: #0088cc; }
-.contact-item.whatsapp a { background-color: #25d366; }
-.contact-item.gmail a { background-color: #d44638; }
-
-
+.contact-item.gmail a {
+  background: linear-gradient(135deg, #d37b8d, #c25e7c);
+}
